@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --primary-hue: 230;
+    --secondary-hue: calc(var(--primary-hue) - 180);
+    --accent-hue: calc(var(--primary-hue) - 90);
+    --rare-hue: calc(var(--primary-hue) + 90);
+    --primary-saturation: 50%;
+    --primary-lightness: 50%;
+    --primary-color: hsla(var(--primary-hue), var(--primary-saturation), 95%, 1);
+    --light-color: hsla(var(--secondary-hue), var(--primary-saturation), 75%, 1);
+    --secondary-color: hsla(var(--secondary-hue), var(--primary-saturation), var(--primary-lightness), 1);
+    --accent-color: hsla(var(--accent-hue), 75%, 35%, 1);
+    --rare-color: hsla(var(--rare-hue), var(--primary-saturation), var(--primary-lightness), 1);
+    --text-color: hsla(calc(var(--primary-hue)), var(--primary-saturation), var(--primary-lightness), 1);
+    --background-color: hsla(var(--secondary-hue), var(--primary-saturation), 97.5%, 1);
+    --image-gradient: fixed linear-gradient(180deg, var(--background-color) 0, var(--background-color) 5rem, hsla(var(--secondary-hue), 0%, 100%, 0.5) calc(100vh - 8em), hsla(var(--secondary-hue), 0%, 100%, 0.35) 100%);
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    background-color: var(--background-color);
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    background-image: url('./headerbg.svg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 12rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: larger;
+    font-style: normal;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 2rem 0 0 0;
+    scroll-behavior: smooth;
+}
+:where(h1) {
+  margin-block: 0.67rem;
+  font-size: 2rem;
+}
+header {
+    border-width: 0px;
+    border-bottom-width: 0px;
+    border-style: solid;
+    border-color: hsla(var(--secondary-hue), 50%, 15%, 0);
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 2rem 0;
+    min-height: 10rem;
+    padding: 0 15% 2em 15%;
+    position: sticky;
+    top: 0;
+    transition: border-bottom-width 0.01s ease-in-out, border-color 0.01s ease-in-out;
+    width: 100%;
+    z-index: 2;
+}
+header.scrolled {
+    background-color: var(--background-color);
+    border-bottom-width: 1px;
+    border-color: hsla(var(--secondary-hue), 50%, 15%, 0.1);
+    min-height: 0;
+    padding-bottom: 1em;
+    transition: border-bottom-width 0.25s ease-in-out, border-color 0.25s ease-in-out;
+}
+#headerbg path {
+    fill: var(--accent-color);
+}
+header h1 {
+    color: var(--text-color);
+    font-size: 2em;
+    line-height: 1;
+    margin: 2rem 1em 0 0;
+/*
+    max-width: 10em;
+*/
+    position: sticky;
+    top: 0;
+}
+/*
+header h1 span {
+    display: block;
+}
+*/
+header nav {
+    align-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    margin: 0.5rem 0 0 0.5rem;
+}
+header nav ul {
+    align-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 2em 0 0 0;
+    text-align: center;
+    width: 100%;
+}
+header nav li {
+    display: block;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+header nav li a {
+/*
+    border-color: hsla(var(--secondary-hue), 50%, 15%, 0.1);
+    border-radius: 0.5em 0.5em 0 0;
+    border-style: solid;
+    border-width: 1px;
+*/
+    box-sizing: content-box;
+    color: var(--text-color);
+    display: block;
+    font-weight: bolder;
+    margin: 0 0.25em;
+    padding: 0 0.5em 0.5em 0.5em;
+    text-decoration: none;
+}
+/*
+header nav li.selected a {
+    border-bottom-width: 0;
+}
+*/
+header nav li:hover a, header nav li a.selected {
+    text-decoration: underline
+}
+main {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0 0 8rem 0;
+    overflow: hidden;
+    padding: 0;
+    z-index: 1;
+}
+main h1 {
+    font-size: 4em;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem 0;
+    text-align: center;
+}
+article {
+    margin: 0 0 2rem 0;
+    padding: 5rem 0 1rem 0;
+}
+section {
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+section > h1, section > h2, section > p, section > ul {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50rem;
+}
+section.details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+section.details h1, section.details h2, section.details p {
+    align-self: stretch;
+    flex: 1 0 100%;
+    max-width: none;
+    text-align: center;
+}
+section.details details {
+    border: 1px solid hsla(var(--secondary-hue), 50%, 15%, 0.1);
+    border-radius: 0.5em;
+    box-shadow: -0.25em 0.25em 0.5em hsla(var(--secondary-hue), 50%, 15%, 0.1);
+    flex: 1 1 auto;
+    margin: 1rem 2rem;
+    max-width: 40rem;
+    min-width: 20rem;
+    padding: 1rem;
+    position: relative;
+    width: 25vw;
+}
+details summary {
+    cursor: pointer;
+    margin: 4rem 0 1rem 0;
+    text-align: center;
+}
+details svg.svg-inline--fa {
+    color: var(--accent-color);
+    display: block;
+    font-size: 3rem;
+    left: 0;
+    margin-right: 0.5em;
+    position: absolute;
+    text-align: center;
+    top: 1rem;
+    width: 100%;
+}
+.kuva h1, .kuva h2, .kuva p, .kuva li {
+    text-shadow: -1px 1px 2px hsla(var(--secondary-hue), 50%, 100%, 0.5);
+}
+.kuva details {
+   background-color: var(--background-color); 
+}
+#top .kuva {
+    /* Photo by daniel-chackalov on Unsplash */
+    background: var(--image-gradient), fixed url('pics/daniel-chekalov-OxU08SFhPbI-unsplash.jpg') center/cover no-repeat;
+}
+#kouluttajalle {
+    background-color: hsla(var(--primary-hue), 75%, 15%, 0.025);
+    border-color: hsla(var(--primary-hue), 50%, 50%, 0.2);
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+}
+#kouluttajalle .kuva {
+    /* Photo by ofspace on Unsplash */
+    background: var(--image-gradient), scroll url('pics/ofspace-llc-kYCPfNps5Rg-unsplash.jpg') center/cover no-repeat;
+}
+#tietoa .kuva {
+    /* Photo by iSawRed on Unsplash */
+    background: var(--image-gradient), fixed url('pics/isawred-74WXzGOvsfk-unsplash.jpg') center/cover no-repeat;
+}
+details summary {
+    font-weight: 700;
+    font-size: 1.25em;
+    list-style: none;
+}
+strong {
+    color: var(--accent-color);
+}
+.rare {
+    color: var(--rare-color);
+}
+footer {
+/*
+    background: linear-gradient(
+        to bottom,
+        hsla(var(--accent-hue), 0%, 100%, 1) 0%,
+        hsla(var(--accent-hue), 50%, 60%, 0.75) 2em
+    );
+*/
+    background-color: hsla(var(--accent-hue), 50%, 50%, 1);
+    bottom: 0;
+    font-size: smaller;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    padding: 3rem 3rem 2rem 3rem;
+    position: fixed;
+    width: 100%;
+}
+footer ul {
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+footer a {
+    color: hsla(var(--secondary-hue), 50%, 15%, 0.9);
+    line-height: 2;
+    padding: 0.5em;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer img {
+    float: left;
+    height: 3em;
+    opacity: 0.5;
+    vertical-align: middle;
+}
+@media (max-width: 60em) {
+ 
+    body {
+        background: transparent;
+    }
+    header {
+        justify-content: right;
+        background: transparent;
+        overflow: visible;
+        position: static;
+        flex-direction: column-reverse;
+    }
+    header.scrolled {        
+        border-bottom-width: 0;
+        border-color: transparent;
+    }
+    header h1 {
+        flex-grow: 1;
+        margin: 0.5rem 0;
+    }
+    header nav {
+        flex-grow: 1;
+        margin: 0;
+        padding: 0;
+    }
+    header nav ul {
+        align-content: flex-start;
+        background-color: var(--background-color);
+        padding: 0;
+        right: 1em;
+        text-align: left;
+    }
+    header nav li {
+        margin: 0.5rem 0;
+    }
+    header nav li a {
+        padding: 0.5rem 1rem 0.5rem 0;
+    }
+    section.details {
+        flex-direction: column;
+        align-items: center;
+    }
+    section.details details {
+        width: 90%;
+        max-width: none;
+        margin: 1rem 0;
+    }
+}
