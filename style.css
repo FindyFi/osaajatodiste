@@ -1,20 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-    --primary-hue: 230;
-    --secondary-hue: calc(var(--primary-hue) - 180);
-    --accent-hue: calc(var(--primary-hue) - 90);
-    --rare-hue: calc(var(--primary-hue) + 90);
-    --primary-saturation: 50%;
-    --primary-lightness: 50%;
-    --primary-color: hsla(var(--primary-hue), var(--primary-saturation), 95%, 1);
-    --light-color: hsla(var(--secondary-hue), var(--primary-saturation), 75%, 1);
-    --secondary-color: hsla(var(--secondary-hue), var(--primary-saturation), var(--primary-lightness), 1);
-    --accent-color: hsla(var(--accent-hue), 75%, 35%, 1);
-    --rare-color: hsla(var(--rare-hue), var(--primary-saturation), var(--primary-lightness), 1);
-    --text-color: hsla(calc(var(--primary-hue)), var(--primary-saturation), var(--primary-lightness), 1);
-    --background-color: hsla(var(--secondary-hue), var(--primary-saturation), 97.5%, 1);
-    --image-gradient: fixed linear-gradient(180deg, var(--background-color) 0, var(--background-color) 5rem, hsla(var(--secondary-hue), 0%, 100%, 0.5) calc(100vh - 8em), hsla(var(--secondary-hue), 0%, 100%, 0.35) 100%);
+
+    --primary-hue: 243.2;
+    --primary-saturation: 100%;
+    --primary-lightness: 37.3%;
+    --primary-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 1);
+
+    --soft-hue: 33.3;
+    --soft-saturation: 100%;
+    --soft-lightness: 91.1%;
+    --soft-color: hsla(var(--soft-hue), var(--soft-saturation), var(--soft-lightness), 1);
+
+    --light-hue: 209.4;
+    --light-saturation: 100%;
+    --light-lightness: 50%;
+    --light-color: hsla(var(--light-hue), var(--light-saturation), var(--light-lightness), 1);
+
+    --dark-hue: 249.5;
+    --dark-saturation: 91.3%;
+    --dark-lightness: 13.5%;
+    --dark-color: hsla(var(--dark-hue), var(--dark-saturation), var(--dark-lightness), 1);
+
+    --accent-hue: 181.7;
+    --accent-saturation: 100%;
+    --accent-lightness: 65.5%;
+    --accent-color: hsla(var(--accent-hue), var(--accent-saturation), var(--accent-lightness), 1);
+
+    --text-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 1);
+    --background-color: hsla(var(--soft-hue), var(--soft-saturation), 99%, 1);
+
+    --image-gradient: fixed linear-gradient(180deg, var(--background-color) 0, var(--background-color) 5rem, hsla(var(--soft-hue), 0%, 100%, 0.5) calc(100vh - 8em), hsla(var(--soft-hue), 0%, 100%, 0.35) 100%);
 }
 * {
     box-sizing: border-box;
@@ -27,10 +43,10 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-image: url('./headerbg.svg');
-    background-position: 0 0;
+    background-image: url('headerbg.svg');
+    background-position: 16% -2rem;
     background-repeat: no-repeat;
-    background-size: 100% 12rem;
+    background-size: auto 14rem;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -49,10 +65,10 @@ body {
   font-size: 2rem;
 }
 header {
+    border-color: var(--light-color);
+    border-style: solid;
     border-width: 0px;
     border-bottom-width: 0px;
-    border-style: solid;
-    border-color: hsla(var(--secondary-hue), 50%, 15%, 0);
     display: flex;
     justify-content: flex-start;
     margin: 0 0 2rem 0;
@@ -65,15 +81,11 @@ header {
     z-index: 2;
 }
 header.scrolled {
-    background-color: var(--background-color);
+    background-color: var(--accent-color);
     border-bottom-width: 1px;
-    border-color: hsla(var(--secondary-hue), 50%, 15%, 0.1);
     min-height: 0;
     padding-bottom: 1em;
     transition: border-bottom-width 0.25s ease-in-out, border-color 0.25s ease-in-out;
-}
-#headerbg path {
-    fill: var(--accent-color);
 }
 header h1 {
     color: var(--text-color);
@@ -119,12 +131,6 @@ header nav li {
     padding: 0;
 }
 header nav li a {
-/*
-    border-color: hsla(var(--secondary-hue), 50%, 15%, 0.1);
-    border-radius: 0.5em 0.5em 0 0;
-    border-style: solid;
-    border-width: 1px;
-*/
     box-sizing: content-box;
     color: var(--text-color);
     display: block;
@@ -150,7 +156,7 @@ main {
     z-index: 1;
 }
 main h1 {
-    font-size: 4em;
+    font-size: 3rem;
     font-weight: 700;
     margin: 1.5rem 0 0.5rem 0;
     text-align: center;
@@ -180,9 +186,9 @@ section.details h1, section.details h2, section.details p {
     text-align: center;
 }
 section.details details {
-    border: 1px solid hsla(var(--secondary-hue), 50%, 15%, 0.1);
+    border: 1px solid hsla(var(--primary-hue), 50%, 15%, 0.1);
     border-radius: 0.5em;
-    box-shadow: -0.25em 0.25em 0.5em hsla(var(--secondary-hue), 50%, 15%, 0.1);
+    box-shadow: -0.25em 0.25em 0.5em hsla(var(--primary-hue), 50%, 15%, 0.1);
     flex: 1 1 auto;
     margin: 1rem 2rem;
     max-width: 40rem;
@@ -197,7 +203,7 @@ details summary {
     text-align: center;
 }
 details svg.svg-inline--fa {
-    color: var(--accent-color);
+    color: var(--light-color);
     display: block;
     font-size: 3rem;
     left: 0;
@@ -208,10 +214,10 @@ details svg.svg-inline--fa {
     width: 100%;
 }
 .kuva h1, .kuva h2, .kuva p, .kuva li {
-    text-shadow: -1px 1px 2px hsla(var(--secondary-hue), 50%, 100%, 0.5);
+    text-shadow: -1px 1px 2px hsla(var(--soft-hue), 50%, 100%, 0.5);
 }
 .kuva details {
-   background-color: var(--background-color); 
+   background-color: var(--background-color);
 }
 #top .kuva {
     /* Photo by daniel-chackalov on Unsplash */
@@ -231,16 +237,36 @@ details svg.svg-inline--fa {
     /* Photo by iSawRed on Unsplash */
     background: var(--image-gradient), fixed url('pics/isawred-74WXzGOvsfk-unsplash.jpg') center/cover no-repeat;
 }
+#yhteys {
+    background-color: var(--accent-color);
+    margin-bottom: 0
+}
 details summary {
     font-weight: 700;
     font-size: 1.25em;
     list-style: none;
 }
 strong {
-    color: var(--accent-color);
+    color: var(--light-color);
 }
 .rare {
     color: var(--rare-color);
+}
+a.button {
+    background-color: var(--primary-color);
+    border-radius: 3.125rem !important;
+    border-style: solid;
+    border-width: 0;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.03125rem;
+    margin: 1rem 0;
+    padding: 0.9375rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.2s !important;
+    text-align: center;
 }
 footer {
 /*
@@ -250,7 +276,7 @@ footer {
         hsla(var(--accent-hue), 50%, 60%, 0.75) 2em
     );
 */
-    background-color: hsla(var(--accent-hue), 50%, 50%, 1);
+    background-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 1);
     bottom: 0;
     font-size: smaller;
     text-align: center;
@@ -268,7 +294,7 @@ footer ul {
     text-align: left;
 }
 footer a {
-    color: hsla(var(--secondary-hue), 50%, 15%, 0.9);
+    color: hsla(var(--primary-hue), 50%, 15%, 0.9);
     line-height: 2;
     padding: 0.5em;
     text-decoration: none;
@@ -279,22 +305,25 @@ footer a:hover {
 footer img {
     float: left;
     height: 3em;
-    opacity: 0.5;
+    opacity: 1;
     vertical-align: middle;
 }
 @media (max-width: 60em) {
- 
+
     body {
         background: transparent;
+        padding: 0 2em;
     }
     header {
         justify-content: right;
         background: transparent;
+        margin: 0;
+        padding: 0;
         overflow: visible;
         position: static;
         flex-direction: column-reverse;
     }
-    header.scrolled {        
+    header.scrolled {
         border-bottom-width: 0;
         border-color: transparent;
     }
@@ -315,10 +344,17 @@ footer img {
         text-align: left;
     }
     header nav li {
+        font-size: smaller;
         margin: 0.5rem 0;
     }
     header nav li a {
         padding: 0.5rem 1rem 0.5rem 0;
+    }
+    main h1 {
+        font-size: 2em;
+    }
+    main h2 {
+        font-size: 1.5em;
     }
     section.details {
         flex-direction: column;
