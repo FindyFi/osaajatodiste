@@ -221,7 +221,28 @@ details svg.svg-inline--fa {
 }
 #top .kuva {
     /* Photo by daniel-chackalov on Unsplash */
+/*
     background: var(--image-gradient), fixed url('pics/daniel-chekalov-OxU08SFhPbI-unsplash.jpg') center/cover no-repeat;
+*/
+    /* Photo by iSawRed on Unsplash */
+    background: var(--image-gradient), fixed url('pics/isawred-74WXzGOvsfk-unsplash.jpg') center/cover no-repeat;
+
+    /* Photo by kaboompics on Pixabay */
+/*
+    background: var(--image-gradient), fixed url('pics/kaboompics-man-791049_1920-pixabay.jpg') center/cover no-repeat;
+*/
+
+    /* Photo by This_is_Engineering on Pixabay */
+/*
+    background: var(--image-gradient), fixed url('pics/This_is_Engineering-laptop-8499942_1920-pixabay.jpg') center/cover no-repeat;
+*/
+
+    /* Photo by Антон Дмитриев on Unsplash */
+
+/*
+    background: var(--image-gradient), fixed url('pics/ehmitrich-Jt01DmHeiqM-unsplash.jpg') center/cover no-repeat;
+*/
+
 }
 #kouluttajalle {
     background-color: hsla(var(--primary-hue), 75%, 15%, 0.025);
@@ -234,8 +255,8 @@ details svg.svg-inline--fa {
     background: var(--image-gradient), scroll url('pics/ofspace-llc-kYCPfNps5Rg-unsplash.jpg') center/cover no-repeat;
 }
 #tietoa .kuva {
-    /* Photo by iSawRed on Unsplash */
-    background: var(--image-gradient), fixed url('pics/isawred-74WXzGOvsfk-unsplash.jpg') center/cover no-repeat;
+    /* Photo by Vika_Glitter on Pixabay */
+    background: var(--image-gradient), fixed url('pics/Vika_Glitter-distance-learning-6974511_1920-pixabay.jpg') center/cover no-repeat;
 }
 #yhteys {
     background-color: var(--accent-color);
